@@ -119,13 +119,23 @@ namespace rharel.M3PD.Expectations.Arrangement
             return new Builder<object>(type);
         }
         /// <summary>
-        /// Creates a new non-generic builder for a move of the specified type.
+        /// Creates a new non-generic builder for a move.
         /// </summary>
-        /// <param name="type">The move's type identifier.</param>
+        /// <typeparam name="T">The type of the move's properties.</typeparam>
+        /// <param name="addressee">An optional addressee identifier.</param>
+        /// <param name="type">An optional type identifier.</param>
         /// <returns>A new move.</returns>
         /// <exception cref="ArgumentException">
+        /// When <paramref name="addressee"/> is blank.
         /// When <paramref name="type"/> is blank.
         /// </exception>
+        /// <remarks>
+        /// If none is specified, the type identifier will be assigned the
+        /// type name of <typeparamref name="T"/>.
+        /// 
+        /// The move's properties are assigned a new instance of 
+        /// <typeparamref name="T"/>.
+        /// </remarks>
         public static Builder<T> Move<T>(
             string addressee = null, 
             string type = null) 
@@ -136,11 +146,19 @@ namespace rharel.M3PD.Expectations.Arrangement
         /// <summary>
         /// Creates a new non-generic builder for a move of the specified type.
         /// </summary>
-        /// <param name="type">The move's type identifier.</param>
+        /// <typeparam name="T">The type of the move's properties.</typeparam>
+        /// <param name="properties">The move's properties object.</param>
+        /// <param name="addressee">An optional addressee identifier.</param>
+        /// <param name="type">An optional type identifier.</param>
         /// <returns>A new move.</returns>
         /// <exception cref="ArgumentException">
+        /// When <paramref name="addressee"/> is blank.
         /// When <paramref name="type"/> is blank.
         /// </exception>
+        /// <remarks>
+        /// If none is specified, the type identifier will be assigned the
+        /// type name of <typeparamref name="T"/>.
+        /// </remarks>
         public static Builder<T> Move<T>(
             T properties,
             string addressee = null,
@@ -151,9 +169,13 @@ namespace rharel.M3PD.Expectations.Arrangement
         /// <summary>
         /// Creates a new non-generic builder for a move of the specified type.
         /// </summary>
+        /// <typeparam name="T">The type of the move's properties.</typeparam>
         /// <param name="type">The move's type identifier.</param>
+        /// <param name="addressee">An optional addressee identifier.</param>
+        /// <param name="properties">The move's properties object.</param>
         /// <returns>A new move.</returns>
         /// <exception cref="ArgumentException">
+        /// When <paramref name="addressee"/> is blank.
         /// When <paramref name="type"/> is blank.
         /// </exception>
         private static Builder<T> Move<T>(
