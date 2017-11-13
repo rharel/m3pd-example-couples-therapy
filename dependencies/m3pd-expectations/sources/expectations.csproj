@@ -1,0 +1,91 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E294F02E-69BD-4991-A704-B7A4C440ED96}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>rharel.M3PD.Expectations</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>rharel.M3PD.Expectations</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitignore" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Arrangement\Atomics\IndefiniteEvent.cs" />
+    <Compile Include="Arrangement\Composites\Conditional.cs" />
+    <Compile Include="Arrangement\Composites\Conjunction.cs" />
+    <Compile Include="Arrangement\Composites\Disjunction.cs" />
+    <Compile Include="Arrangement\Composites\Divergence.cs" />
+    <Compile Include="Arrangement\Composites\Repeat.cs" />
+    <Compile Include="Arrangement\Composites\Sequence.cs" />
+    <Compile Include="Arrangement\Natural Language Interface\DialogueMoveNLI.cs" />
+    <Compile Include="Arrangement\Natural Language Interface\NodeNLI.cs" />
+    <Compile Include="Arrangement\Node.cs" />
+    <Compile Include="Arrangement\Resolution.cs" />
+    <Compile Include="Modules\ExpectationBasedAS.cs" />
+    <Compile Include="Modules\ExpectationBasedAT.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="State\CommonComponentIDs.cs" />
+    <Compile Include="State\SocialContext.cs" />
+    <Compile Include="Timing\Extensions.cs" />
+    <Compile Include="Timing\InterruptionInitiation.cs" />
+    <Compile Include="Timing\InterruptionResponse.cs" />
+    <Compile Include="Timing\InterruptionRules.cs" />
+    <Compile Include="Timing\SocialRule.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\m3pd-agency\sources\agency.csproj">
+      <Project>{36af877a-14ff-404e-97aa-267bdee6b6d6}</Project>
+      <Name>agency</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\m3pd-common\sources\common.csproj">
+      <Project>{d58f3584-7827-4080-94be-ebf7dd818bd5}</Project>
+      <Name>common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\optional\sources\optional.csproj">
+      <Project>{5279E051-4634-49FA-BCD2-07B90EC2AB84}</Project>
+      <Name>optional</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\require\sources\require.csproj">
+      <Project>{87F4F159-C480-47EA-B1ED-A2E928A229DE}</Project>
+      <Name>require</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>
