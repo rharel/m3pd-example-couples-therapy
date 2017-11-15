@@ -15,5 +15,5 @@ var searchData=
   ['predicate',['Predicate',['../namespacerharel_1_1_m3_p_d_1_1_common_1_1_delegates.html#a0a364207d2f6ee129b857d1dcbc4f720',1,'rharel::M3PD::Common::Delegates']]],
   ['predicates',['Predicates',['../classrharel_1_1_m3_p_d_1_1_common_1_1_delegates_1_1_predicates.html',1,'rharel::M3PD::Common::Delegates']]],
   ['process',['Process',['../classrharel_1_1_m3_p_d_1_1_expectations_1_1_arrangement_1_1_node.html#ae6bf0cf26878186b9f9a2220cd10949c',1,'rharel::M3PD::Expectations::Arrangement::Node']]],
-  ['properties',['Properties',['../classrharel_1_1_m3_p_d_1_1_agency_1_1_dialogue___moves_1_1_dialogue_move.html#aaee86bda97fa737c85d8aa39d99c8399',1,'rharel.M3PD.Agency.Dialogue_Moves.DialogueMove.Properties()'],['../classrharel_1_1_m3_p_d_1_1_agency_1_1_dialogue___moves_1_1_dialogue_move.html#ac75eeeb057c2bee16e0eaa04e36407ca',1,'rharel.M3PD.Agency.Dialogue_Moves.DialogueMove.Properties()']]]
+  ['properties',['Properties',['../interfacerharel_1_1_m3_p_d_1_1_agency_1_1_dialogue___moves_1_1_dialogue_move.html#a8837b1291e624e277d291ed10c86406c',1,'rharel.M3PD.Agency.Dialogue_Moves.DialogueMove.Properties()'],['../classrharel_1_1_m3_p_d_1_1_agency_1_1_dialogue___moves_1_1_move.html#abc64e56434e095e6125001103e418571',1,'rharel.M3PD.Agency.Dialogue_Moves.Move.Properties()']]]
 ];
