@@ -25,16 +25,16 @@ namespace rharel.M3PD.Expectations.Arrangement
     public static class DialogueMoveNLI
     {
         /// <summary>
-        /// Builds instances of <see cref="DialogueMove{T}"/>.
+        /// Builds instances of <see cref="Move{T}"/>.
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        public sealed class Builder<T>: ObjectBuilder<DialogueMove<T>>
+        public sealed class Builder<T>: ObjectBuilder<Move<T>>
         {
             /// <summary>
             /// Builds implicitly.
             /// </summary>
             /// <param name="builder">The instance to build.</param>
-            public static implicit operator DialogueMove<T>(Builder<T> builder)
+            public static implicit operator Move<T>(Builder<T> builder)
             {
                 return builder.Build();
             }
@@ -51,7 +51,7 @@ namespace rharel.M3PD.Expectations.Arrangement
             /// </exception>
             public Builder(string type)
             {
-                _builder = new DialogueMove<T>.Builder(type);
+                _builder = new Move<T>.Builder(type);
             }
 
             /// <summary>
@@ -95,12 +95,12 @@ namespace rharel.M3PD.Expectations.Arrangement
             /// Creates the object.
             /// </summary>
             /// <returns>The built object.</returns>
-            protected override DialogueMove<T> CreateObject()
+            protected override Move<T> CreateObject()
             {
                 return _builder.Build();
             }
 
-            private readonly DialogueMove<T>.Builder _builder;
+            private readonly Move<T>.Builder _builder;
         }
 
         /// <summary>

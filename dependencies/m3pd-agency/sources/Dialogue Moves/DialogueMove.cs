@@ -24,7 +24,7 @@ namespace rharel.M3PD.Agency.Dialogue_Moves
     /// abstraction desired is dependent on the use-case.
     /// </para>
     /// <para>
-    /// <see cref="DialogueMove{T}"/> for the generic version.
+    /// <see cref="Move{T}"/> for the generic version.
     /// </para>
     /// </remarks>
     public interface DialogueMove
@@ -50,12 +50,12 @@ namespace rharel.M3PD.Agency.Dialogue_Moves
     /// <see cref="DialogueMove"/> for the non-generic version and additional
     /// details.
     /// </remarks>
-    public sealed class DialogueMove<T>: DialogueMove
+    public sealed class Move<T>: DialogueMove
     {
         /// <summary>
-        /// Builds instances of <see cref="DialogueMove{T}"/>.
+        /// Builds instances of <see cref="Move{T}"/>.
         /// </summary>
-        public sealed class Builder: ObjectBuilder<DialogueMove<T>>
+        public sealed class Builder: ObjectBuilder<Move<T>>
         {
             /// <summary>
             /// Creates a new builder for a move of the specified type.
@@ -173,9 +173,9 @@ namespace rharel.M3PD.Agency.Dialogue_Moves
             /// Creates the object.
             /// </summary>
             /// <returns>The built object.</returns>
-            protected override DialogueMove<T> CreateObject()
+            protected override Move<T> CreateObject()
             {
-                return new DialogueMove<T>(_type, _addressee_ids, _properties);
+                return new Move<T>(_type, _addressee_ids, _properties);
             }
 
             private readonly string _type;
@@ -190,7 +190,7 @@ namespace rharel.M3PD.Agency.Dialogue_Moves
         /// The move's addressee identifiers.
         /// </param>
         /// <param name="properties">The move's properties.</param>
-        private DialogueMove(
+        private Move(
             string type, 
             HashSet<string> addressee_ids, 
             Optional<T> properties)
@@ -232,9 +232,9 @@ namespace rharel.M3PD.Agency.Dialogue_Moves
         /// <returns>
         /// A new move containing the cast properties of this one.
         /// </returns>
-        public DialogueMove<TResult> Cast<TResult>()
+        public Move<TResult> Cast<TResult>()
         {
-            return new DialogueMove<TResult>(
+            return new Move<TResult>(
                 Type, 
                 new HashSet<string>(AddresseeIDs), 
                 Properties.Cast<TResult>()
@@ -285,7 +285,7 @@ namespace rharel.M3PD.Agency.Dialogue_Moves
         {
             string addressees = String.Join(", ", AddresseeIDs.ToArray());
 
-            return $"{nameof(DialogueMove<T>)}{{ " +
+            return $"{nameof(Move<T>)}{{ " +
                    $"{nameof(Type)} = '{Type}', " +
                    $"{nameof(AddresseeIDs)} = [{addressees}], " +
                    $"{nameof(Properties)} = {Properties} }}";
@@ -311,7 +311,7 @@ namespace rharel.M3PD.Agency.Dialogue_Moves
         /// </exception>
         public static DialogueMove Create(string type, string addressee = null)
         {
-            var move = new DialogueMove<object>.Builder(type);
+            var move = new Move<object>.Builder(type);
 
             if (addressee != null) { move.WithAddressee(addressee); }
 
@@ -334,7 +334,7 @@ namespace rharel.M3PD.Agency.Dialogue_Moves
         public static DialogueMove Create(
             string type, IEnumerable<string> addressees)
         {
-            var move = new DialogueMove<object>.Builder(type);
+            var move = new Move<object>.Builder(type);
 
             if (addressees != null) { move.WithAddressees(addressees); }
 
@@ -357,7 +357,7 @@ namespace rharel.M3PD.Agency.Dialogue_Moves
         public static DialogueMove Create(
             string type, params string[] addressees)
         {
-            var move = new DialogueMove<object>.Builder(type);
+            var move = new Move<object>.Builder(type);
 
             if (addressees != null) { move.WithAddressees(addressees); }
 
@@ -379,10 +379,10 @@ namespace rharel.M3PD.Agency.Dialogue_Moves
         /// When <paramref name="type"/> is blank.
         /// When <paramref name="addressee"/> is blank.
         /// </exception>
-        public static DialogueMove<T> Create<T>(
+        public static Move<T> Create<T>(
             string type, T properties, string addressee = null)
         {
-            var move = new DialogueMove<T>.Builder(type);
+            var move = new Move<T>.Builder(type);
             move.WithProperties(properties);
 
             if (addressee != null) { move.WithAddressee(addressee); }
@@ -405,10 +405,10 @@ namespace rharel.M3PD.Agency.Dialogue_Moves
         /// When <paramref name="type"/> is blank.
         /// When <paramref name="addressees"/> contains blank.
         /// </exception>
-        public static DialogueMove<T> Create<T>(
+        public static Move<T> Create<T>(
             string type, T properties, IEnumerable<string> addressees)
         {
-            var move = new DialogueMove<T>.Builder(type);
+            var move = new Move<T>.Builder(type);
             move.WithProperties(properties);
 
             if (addressees != null) { move.WithAddressees(addressees); }
@@ -431,10 +431,10 @@ namespace rharel.M3PD.Agency.Dialogue_Moves
         /// When <paramref name="type"/> is blank.
         /// When <paramref name="addressees"/> contains blank.
         /// </exception>
-        public static DialogueMove<T> Create<T>(
+        public static Move<T> Create<T>(
             string type, T properties, params string[] addressees)
         {
-            var move = new DialogueMove<T>.Builder(type);
+            var move = new Move<T>.Builder(type);
             move.WithProperties(properties);
 
             if (addressees != null) { move.WithAddressees(addressees); }
