@@ -2,6 +2,9 @@
 # Release directory
 [Rr]elease/
 
+# External assets
+Assets/External/
+
 # Created by https://www.gitignore.io/api/unity
 
 ### Unity ###
