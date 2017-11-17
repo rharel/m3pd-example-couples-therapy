@@ -43,7 +43,7 @@ namespace rharel.M3PD.CouplesTherapyExample.Expectations
                 expect.Any(
                     "counseling",  // issue discussion or session ending
 
-                    expect.Repeat(expect.OneOf(
+                    expect.Repetition(expect.OneOf(
                         "issue discussion with either patient",
 
                         IssueDiscussion(patients.First),

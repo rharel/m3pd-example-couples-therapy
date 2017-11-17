@@ -9,7 +9,7 @@ namespace rharel.M3PD.Expectations.Arrangement
     /// <summary>
     /// Expects to repeatedly satisfy a specified child.
     /// </summary>
-    public sealed class Repeat: Node
+    public sealed class Repetition: Node
     {
         /// <summary>
         /// Creates a new node with the specified identifier and body.
@@ -23,7 +23,7 @@ namespace rharel.M3PD.Expectations.Arrangement
         /// <exception cref="ArgumentException">
         /// When <paramref name="id"/> is blank.
         /// </exception>
-        public Repeat(string id, Node body)
+        public Repetition(string id, Node body)
             : base(id, new Node[1] { body })
         {
             if (body == null)
@@ -106,7 +106,7 @@ namespace rharel.M3PD.Expectations.Arrangement
         /// <returns>A human-readable string.</returns>
         public override string ToString()
         {
-            return $"{nameof(Repeat)}{{ " +
+            return $"{nameof(Repetition)}{{ " +
                    $"{nameof(ID)} = '{ID}', " +
                    $"{nameof(Body)} = {Body} }}";
         }

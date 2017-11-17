@@ -49,7 +49,7 @@
     <Compile Include="Arrangement\Composites\Conjunction.cs" />
     <Compile Include="Arrangement\Composites\Disjunction.cs" />
     <Compile Include="Arrangement\Composites\Divergence.cs" />
-    <Compile Include="Arrangement\Composites\Repeat.cs" />
+    <Compile Include="Arrangement\Composites\Repetition.cs" />
     <Compile Include="Arrangement\Composites\Sequence.cs" />
     <Compile Include="Arrangement\Natural Language Interface\DialogueMoveNLI.cs" />
     <Compile Include="Arrangement\Natural Language Interface\NodeNLI.cs" />

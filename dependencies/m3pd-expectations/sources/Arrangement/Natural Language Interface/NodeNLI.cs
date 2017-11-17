@@ -186,10 +186,10 @@ namespace rharel.M3PD.Expectations.Arrangement
         /// <exception cref="ArgumentNullException">
         /// When <paramref name="body"/> is null.
         /// </exception>
-        public Repeat Repeat(Node body)
+        public Repetition Repetition(Node body)
         {
-            string id = ProcessNewNode(typeof(Repeat), null);
-            return new Repeat(id, body);
+            string id = ProcessNewNode(typeof(Repetition), null);
+            return new Repetition(id, body);
         }
 
         /// <summary>
@@ -422,7 +422,7 @@ namespace rharel.M3PD.Expectations.Arrangement
                 { typeof(Conjunction), 0 },
                 { typeof(Disjunction), 0 },
                 { typeof(Divergence), 0 },
-                { typeof(Repeat), 0 },
+                { typeof(Repetition), 0 },
                 { typeof(Sequence), 0 },
             }
         );
